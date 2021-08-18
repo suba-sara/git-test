@@ -2,24 +2,28 @@ pipeline {
     agent none
 
     stages {
-    	agent { label 'test' }
+    	
     
         stage('Build') {
+		agent { label 'test' }
             steps {
                 echo 'Building.. This is the build phase'
             }
         }
         stage('Test') {
+	agent { label 'test' }
             steps {
                 echo 'Testing.. This is the testing phase'
             }
         }
         stage('Deploy') {
+	agent { label 'test' }
             steps {
                 echo 'Deploying....  This is the deployment phase'
             }
         }
 	stage('Postdeploy') {
+	agent { label 'test' }
 		steps {
 			echo 'Postdeployment phase....'
 		}
